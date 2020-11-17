@@ -191,9 +191,11 @@ def Plot(Route, Data):
 
 # 主函数
 # 客户点的坐标，第一个是仓库
-Data1 =np.random.randint(100,size=(20,2))
-Data2 = np.mat([[1, 2],[1, 2],[1, 2]])
-Data = np.concatenate(Data1,Data2,1)
+# Data1 =np.random.randint(100,size=(20,2))
+# Data2 = np.mat([[1, 2],[1, 2],[1, 2]])
+# Data = np.concatenate(Data1,Data2,1)
+
+Data = np.mat([[1,2],[2,1],[1,3],[2,4],[3,1],[4,2],[3,4],[4,3]])
 
 # 参数初始化
 Dis = Distance(Data)
@@ -230,7 +232,7 @@ for r in range(maxecho):
     # print(Route)
     # print(NewV)
     # 检查是否为八个客户点（一开始设置了八个：[[1, 2],[2, 1], [1, 3], [2, 4], [3, 1], [4, 2], [3, 4], [4, 3]]）
-    if len(np.unique(Route)) == 23:
+    if len(np.unique(Route)) == 8:
         print(r, "Route found:", Route)
         Dis_r = CalcuDis(Route, Dis)
         Dis_all += [Dis_r]
